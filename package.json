@@ -1,14 +1,20 @@
 {
   "name": "andrewbrey",
   "version": "1.0.0",
-  "description": "My personal website and portfolio",
+  "description": "Andrew Brey personal website",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "commit": "git-cz"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://andrewbrey@bitbucket.org/andrewbrey/andrewbrey.git"
   },
   "author": "Andrew Brey <andrewjamesbrey@gmail.com>",
   "license": "UNLICENSED",
-  "homepage": "https://bitbucket.org/andrewbrey/andrewbrey#readme"
+  "homepage": "https://bitbucket.org/andrewbrey/andrewbrey#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "cz-conventional-changelog": "2.1.0"
+  }
 }
