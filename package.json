@@ -1,0 +1,14 @@
+{
+  "name": "andrewbrey",
+  "version": "1.0.0",
+  "description": "My personal website and portfolio",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://andrewbrey@bitbucket.org/andrewbrey/andrewbrey.git"
+  },
+  "author": "Andrew Brey <andrewjamesbrey@gmail.com>",
+  "license": "UNLICENSED",
+  "homepage": "https://bitbucket.org/andrewbrey/andrewbrey#readme"
+}
