@@ -1,3 +1,0 @@
-# TODOs
-
-[ ] Add productionification
