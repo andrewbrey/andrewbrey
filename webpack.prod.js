@@ -80,9 +80,9 @@ module.exports = {
 			// Inject the html into the html-webpack-plugin
 			inject: true,
 			// favicon background color (see https://github.com/haydenbleasel/favicons#usage)
-			background: "#fff",
+			background: "#222",
 			// favicon app title (see https://github.com/haydenbleasel/favicons#usage)
-			title: "Andrew Brey",
+			title: "Andrew Brey - Software Developer",
 
 			// which icons should be generated (see https://github.com/haydenbleasel/favicons#usage)
 			icons: {
