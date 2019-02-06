@@ -1,0 +1,124 @@
+// -----------------------------------------------------------------------------
+// This file contains CSS helper classes.
+// -----------------------------------------------------------------------------
+
+@include make-all-paddings(xs);
+@include make-all-margins(xs);
+
+@media (min-width: $tablet) {
+	@include make-all-paddings(sm);
+	@include make-all-margins(sm);
+}
+
+@media (min-width: $desktop) {
+	@include make-all-paddings(md);
+	@include make-all-margins(md);
+}
+
+@media (min-width: $wide) {
+	@include make-all-paddings(lg);
+	@include make-all-margins(lg);
+}
+
+/**
+ * Hide text while making it readable for screen readers
+ * 1. Needed in WebKit-based browsers because of an implementation bug;
+ *    See: https://code.google.com/p/chromium/issues/detail?id=457146
+ */
+.hide-text {
+	overflow: hidden;
+	padding: 0; /* 1 */
+	text-indent: 101%;
+	white-space: nowrap;
+}
+
+/**
+ * Hide element while making it readable for screen readers
+ * Shamelessly borrowed from HTML5Boilerplate:
+ * https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css#L119-L133
+ */
+.visually-hidden {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+
+// Z-levels
+.z-depth-0 {
+	@include z-depth(0);
+}
+
+/* 2dp elevation modified */
+.z-depth-1 {
+	@include z-depth(1);
+}
+
+.z-depth-1-half {
+	@include z-depth(1.5);
+}
+
+/* 6dp elevation modified */
+.z-depth-2 {
+	@include z-depth(2);
+}
+
+/* 12dp elevation modified */
+.z-depth-3 {
+	@include z-depth(3);
+}
+
+/* 16dp elevation */
+.z-depth-4 {
+	@include z-depth(4);
+}
+
+/* 24dp elevation */
+.z-depth-5 {
+	@include z-depth(5);
+}
+
+.hoverable {
+	transition: box-shadow 0.25s;
+
+	&:hover {
+		box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	}
+}
+
+.ghost-lt-sm {
+	@include mq($until: tablet) {
+		opacity: 0;
+		visibility: hidden;
+	}
+}
+
+.ghost-lt-md {
+	@include mq($until: desktop) {
+		opacity: 0;
+		visibility: hidden;
+	}
+}
+
+.ghost-lt-lg {
+	@include mq($until: desktop) {
+		opacity: 0;
+		visibility: hidden;
+	}
+}
+
+.break-word {
+	word-break: break-word;
+}
+
+.cursor-pointer {
+	cursor: pointer;
+}
+
+.outline-none {
+	outline: none !important;
+}

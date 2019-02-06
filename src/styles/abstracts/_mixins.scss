@@ -1,0 +1,193 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass mixins.
+// -----------------------------------------------------------------------------
+
+/// Event wrapper
+/// @author Harry Roberts
+/// @param {Bool} $self [false] - Whether or not to include current selector
+/// @link https://twitter.com/csswizardry/status/478938530342006784 Original tweet from Harry Roberts
+@mixin on-event($self: false) {
+	@if $self {
+		&,
+		&:hover,
+		&:active,
+		&:focus {
+			@content;
+		}
+	} @else {
+		&:hover,
+		&:active,
+		&:focus {
+			@content;
+		}
+	}
+}
+
+/// Make a context based selector a little more friendly
+/// @author Hugo Giraudel
+/// @param {String} $context
+@mixin when-inside($context) {
+	#{$context} & {
+		@content;
+	}
+}
+
+/// Fill text with a left-to-right color gradient
+@mixin gradient-text-clip($from:  get-brand-color("off-white"), $to:  get-brand-color("off-black")) {
+	color: transparent;
+	background-image: -webkit-linear-gradient(left, $from, $to); /* For Chrome and Safari */
+	background-image: -moz-linear-gradient(left, $from, $to); /* For old Fx (3.6 to 15) */
+	background-image: -ms-linear-gradient(left, $from, $to); /* For pre-releases of IE 10 */
+	background-image: -o-linear-gradient(left, $from, $to); /* For old Opera (11.1 to 12.0) */
+	background-image: linear-gradient(to right, $from, $to); /* Standard syntax; must be last */
+	-webkit-background-clip: text;
+	background-clip: text;
+	display: inline-block;
+}
+
+/// Sets the background image that has an overlay of the provided color and opacity
+@mixin background-image-overlay($image-url, $color, $opacity: 0.25, $position: center, $size: cover, $repeat: no-repeat, $attachment: scroll) {
+	background: linear-gradient(rgba($color, $opacity), rgba($color, $opacity)), url($image-url) #{$position} / #{$size} $repeat $attachment;
+}
+
+@mixin make-paddings($class, $padding) {
+	.p-#{$class}-#{$padding} {
+		padding: $padding * 1px !important; /* stylelint-disable-line declaration-no-important */
+	}
+	.pl-#{$class}-#{$padding} {
+		padding-left: $padding * 1px !important; /* stylelint-disable-line declaration-no-important */
+	}
+	.pr-#{$class}-#{$padding} {
+		padding-right: $padding * 1px !important; /* stylelint-disable-line declaration-no-important */
+	}
+	.pt-#{$class}-#{$padding} {
+		padding-top: $padding * 1px !important; /* stylelint-disable-line declaration-no-important */
+	}
+	.pb-#{$class}-#{$padding} {
+		padding-bottom: $padding * 1px !important; /* stylelint-disable-line declaration-no-important */
+	}
+	.pv-#{$class}-#{$padding} {
+		@extend .pt-#{$class}-#{$padding};
+		@extend .pb-#{$class}-#{$padding};
+	}
+	.ph-#{$class}-#{$padding} {
+		@extend .pl-#{$class}-#{$padding};
+		@extend .pr-#{$class}-#{$padding};
+	}
+}
+
+@mixin make-margins($class, $margin) {
+	.m-#{$class}-#{$margin} {
+		margin: $margin * 1px !important; /* stylelint-disable-line declaration-no-important */
+	}
+	.ml-#{$class}-#{$margin} {
+		margin-left: $margin * 1px !important; /* stylelint-disable-line declaration-no-important */
+	}
+	.mr-#{$class}-#{$margin} {
+		margin-right: $margin * 1px !important; /* stylelint-disable-line declaration-no-important */
+	}
+	.mt-#{$class}-#{$margin} {
+		margin-top: $margin * 1px !important; /* stylelint-disable-line declaration-no-important */
+	}
+	.mb-#{$class}-#{$margin} {
+		margin-bottom: $margin * 1px !important; /* stylelint-disable-line declaration-no-important */
+	}
+	.mv-#{$class}-#{$margin} {
+		@extend .mt-#{$class}-#{$margin};
+		@extend .mb-#{$class}-#{$margin};
+	}
+	.mh-#{$class}-#{$margin} {
+		@extend .ml-#{$class}-#{$margin};
+		@extend .mr-#{$class}-#{$margin};
+	}
+
+	.-ml-#{$class}-#{$margin} {
+		margin-left: $margin * -1px !important; /* stylelint-disable-line declaration-no-important */
+	}
+	.-mr-#{$class}-#{$margin} {
+		margin-right: $margin * -1px !important; /* stylelint-disable-line declaration-no-important */
+	}
+	.-mt-#{$class}-#{$margin} {
+		margin-top: $margin * -1px !important; /* stylelint-disable-line declaration-no-important */
+	}
+	.-mb-#{$class}-#{$margin} {
+		margin-bottom: $margin * -1px !important; /* stylelint-disable-line declaration-no-important */
+	}
+}
+
+@mixin make-all-paddings($class) {
+	@include make-paddings($class, $padding-none);
+	@include make-paddings($class, $padding-sm);
+	@include make-paddings($class, $padding-2sm);
+	@include make-paddings($class, $padding-base);
+	@include make-paddings($class, $padding-md);
+	@include make-paddings($class, $padding-2md);
+	@include make-paddings($class, $padding-lg);
+	@include make-paddings($class, $padding-xl);
+	@include make-paddings($class, $padding-2xl);
+	@include make-paddings($class, $padding-3xl);
+	@include make-paddings($class, $padding-4xl);
+	@include make-paddings($class, $padding-5xl);
+	@include make-paddings($class, $padding-6xl);
+}
+
+@mixin make-all-margins($class) {
+	@include make-margins($class, $margin-none);
+	@include make-margins($class, $margin-sm);
+	@include make-margins($class, $margin-2sm);
+	@include make-margins($class, $margin-base);
+	@include make-margins($class, $margin-md);
+	@include make-margins($class, $margin-2md);
+	@include make-margins($class, $margin-lg);
+	@include make-margins($class, $margin-xl);
+	@include make-margins($class, $margin-2xl);
+	@include make-margins($class, $margin-3xl);
+	@include make-margins($class, $margin-4xl);
+	@include make-margins($class, $margin-5xl);
+	@include make-margins($class, $margin-6xl);
+}
+
+@mixin scrollbar-styles($size, $foreground-color, $background-color: mix($foreground-color, $white, 50%)) {
+	// For Internet Explorer
+	& {
+		scrollbar-face-color: $foreground-color;
+		scrollbar-track-color: $background-color;
+	}
+
+	&::-webkit-scrollbar {
+		width: $size;
+		height: $size;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background: $foreground-color;
+		cursor: pointer;
+	}
+
+	&::-webkit-scrollbar-track {
+		background: $background-color;
+	}
+}
+
+@mixin z-depth($depth: 1, $color: #000) {
+	@if ($depth == 0) {
+		box-shadow: none !important;
+	} @else if ($depth == 1) {
+		box-shadow: 0 2px 2px 0 rgba($color, 0.14), 0 3px 1px -2px rgba($color, 0.12), 0 1px 5px 0 rgba($color, 0.2);
+	} @else if ($depth == 1.5) {
+		box-shadow: 0 3px 3px 0 rgba($color, 0.14), 0 1px 7px 0 rgba($color, 0.12), 0 3px 1px -1px rgba($color, 0.2);
+	} @else if ($depth == 2) {
+		box-shadow: 0 4px 5px 0 rgba($color, 0.14), 0 1px 10px 0 rgba($color, 0.12), 0 2px 4px -1px rgba($color, 0.3);
+	} @else if ($depth == 3) {
+		box-shadow: 0 8px 17px 2px rgba($color, 0.14), 0 3px 14px 2px rgba($color, 0.12), 0 5px 5px -3px rgba($color, 0.2);
+	} @else if ($depth == 4) {
+		box-shadow: 0 16px 24px 2px rgba($color, 0.14), 0 6px 30px 5px rgba($color, 0.12), 0 8px 10px -7px rgba($color, 0.2);
+	} @else if ($depth == 5) {
+		box-shadow: 0 24px 38px 3px rgba($color, 0.14), 0 9px 46px 8px rgba($color, 0.12),
+		0 11px 15px -7px rgba($color, 0.2);
+	} @else if ($depth == hover) {
+		box-shadow: 0 8px 17px 0 rgba($color, 0.2), 0 6px 20px 0 rgba($color, 0.19);
+	} @else {
+		@error "Unknown z-depth [#{$depth}]!";
+	}
+}

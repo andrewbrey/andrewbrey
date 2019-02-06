@@ -1,0 +1,10 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the link component.
+// -----------------------------------------------------------------------------
+a {
+	text-decoration: none;
+
+	@include on-event() {
+		text-decoration: none;
+	}
+}
