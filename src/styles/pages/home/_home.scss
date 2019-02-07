@@ -32,6 +32,34 @@ section {
 	object-fit: cover;
 	height: 100%;
 	width: 100%;
+
+	/* Try to get rid of the media controls... */
+	&::-webkit-media-controls-panel,
+	&::-webkit-media-controls-play-button,
+	&::-webkit-media-controls-start-playback-button,
+	&::-webkit-media-controls-current-time-display,
+	&::-webkit-media-controls-time-remaining-display,
+	&::-webkit-media-controls-timeline,
+	&::-webkit-media-controls-mute-button,
+	&::-webkit-media-controls-volume-slider,
+	&::-webkit-media-controls-fullscreen-button,
+	&::-internal-media-controls-download-button,
+	&::-webkit-media-controls,
+	&::-webkit-media-controls-enclosure,
+	&::-webkit-media-controls-overlay-enclosure {
+		-webkit-appearance: none !important;
+		display: none !important;
+		opacity: 0 !important;
+		visibility: hidden !important;
+		border: 0;
+		clip: rect(0 0 0 0);
+		height: 1px;
+		margin: -1px;
+		overflow: hidden;
+		padding: 0;
+		position: absolute;
+		width: 1px;
+	}
 }
 
 .video-cover,

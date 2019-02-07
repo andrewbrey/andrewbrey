@@ -18,7 +18,7 @@ module.exports = {
 	devServer: {
 		port: 9000,
 		host: "0.0.0.0", // Allow dev server on local network, not just localhost https://stackoverflow.com/a/35419631
-		allowedHosts: ["localhost"],
+		allowedHosts: ["localhost", "local.drew"],
 		contentBase: buildPath
 	},
 	module: {
