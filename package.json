@@ -1,6 +1,16 @@
 {
-  "name": "blog-starter-typescript",
+  "name": "andrewbrey",
   "version": "1.0.0",
+  "description": "Andrew Brey personal website",
+  "author": "Andrew Brey <andrew@fluencyy.com>",
+  "homepage": "https://www.andrewbrey.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andrewbrey/andrewbrey.git"
+  },
+  "bugs": {
+    "url": "https://github.com/andrewbrey/andrewbrey/issues"
+  },
   "scripts": {
     "dev": "next",
     "build": "next build",
@@ -26,6 +36,7 @@
     "@types/react-dom": "^17.0.0",
     "autoprefixer": "^10.2.4",
     "postcss": "^8.2.6",
+    "prettier": "2.2.1",
     "tailwindcss": "^2.0.3"
   },
   "license": "MIT"
