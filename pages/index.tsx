@@ -5,11 +5,7 @@ const links = [
   { text: "LinkedIn", link: "https://www.linkedin.com/in/andrew-brey" },
   { text: "Blog", link: "https://blog.andrewbrey.com" },
   { text: "GitHub", link: "https://github.com/andrewbrey" },
-  {
-    text: "Resume",
-    link:
-      "https://static.fluencyy.com/www.andrewbrey.com/AndrewBrey_resume.pdf",
-  },
+  { text: "Resume", link: "/assets/AndrewBrey_resume.pdf" },
   { text: "Fluencyy LLC", link: "https://www.fluencyy.com" },
 ];
 
@@ -20,7 +16,7 @@ const Index = () => {
         <title>Andrew Brey - Software Developer</title>
       </Head>
 
-      <div className="p-4 flex flex-col items-center justify-center h-screen">
+      <div className="p-4 flex flex-col items-center justify-center h-full">
         <video
           className="fixed inset-0 h-screen w-screen object-cover"
           playsInline
@@ -36,7 +32,7 @@ const Index = () => {
         <div className="fixed inset-0 h-screen w-screen bg-smoke-900 opacity-50"></div>
 
         <div className="relative">
-          <h1 className="text-5xl md:text-6xl text-smoke-100 font-bold uppercase text-center">
+          <h1 className="text-4xl md:text-6xl text-smoke-100 font-bold uppercase text-center">
             Andrew Brey
           </h1>
           <h2 className="mt-2 md:mt-3 text-2xl md:text-3xl text-smoke-300 text-center">

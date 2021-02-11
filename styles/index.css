@@ -43,6 +43,10 @@
 
 @tailwind base;
 
+#__next {
+  @apply h-full;
+}
+
 @tailwind components;
 
 @tailwind utilities;
