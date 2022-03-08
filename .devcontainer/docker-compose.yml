@@ -1,0 +1,19 @@
+version: "2.4"
+
+volumes:
+  andrewbrey-node_modules:
+
+services:
+  andrewbrey:
+    container_name: andrewbrey
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ..:/workspace
+      - andrewbrey-node_modules:/workspace/node_modules
+    ports:
+      - "3000:3000"
+    user: node
+    # Overrides default command so things don't shut down after the process ends.
+    command: /bin/sh -c "while sleep 60000; do :; done"
