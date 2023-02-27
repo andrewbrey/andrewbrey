@@ -74,7 +74,11 @@
         "type": "text-and-comment"
       }
     },
-    "todo-tree.filtering.excludeGlobs": ["**/node_modules/**/*", "**/extensions/**", "**/*.md"],
+    "todo-tree.filtering.excludeGlobs": [
+      "**/node_modules/**/*",
+      "**/extensions/**",
+      "**/*.md"
+    ],
     "todo-tree.tree.expanded": true,
     "todo-tree.tree.flat": true,
     "todo-tree.tree.grouped": false,

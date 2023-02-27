@@ -1,4 +1,4 @@
-FROM node:14.19
+FROM node:18.14
 
 # Avoid warnings by switching to noninteractive
 ENV DEBIAN_FRONTEND=noninteractive
