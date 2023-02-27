@@ -17,7 +17,7 @@ const Index = () => {
 
       <div className="flex flex-col items-center justify-center h-full p-4">
         <video
-          className="fixed inset-0 object-cover w-screen h-screen"
+          className="fixed inset-0 object-cover w-screen h-screen blur-md"
           playsInline
           autoPlay
           muted
